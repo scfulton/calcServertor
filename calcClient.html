@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CalcClient</title>
+  </head>
+  <body>
+    <script>
+        function sendExpression(){
+            var response = fetch("http://localhost:3000/helpmeNow");
+            var myJson = response.json();
+            // var inputExp = document.getElementById("inExp");    
+            // document.getElementById("demo").innerHTML = "Hello JavaScript!";
+            console.log(JSON.stringify(myJson));
+        }
+    </script>
+
+    <form method="POST" action="/">
+      <input type="text" id="inExp" name="expression" />
+
+      <input type="submit" value="Submit" onsubmit="sendExpression()" />
+      <br />
+      <textarea id="demo">(Answer here) </textarea>
+
+      <!-- 
+    <input id="expInput" type="text"/>
+    <button id="calButton" onclick="" >calculate</button>
+    <br/>
+    <br/>
+    <textarea id="results">(Results will be here)</textarea> -->
+    </form>
+  </body>
+</html>
